@@ -16,6 +16,9 @@ function event_trade(e)
 	if(item_lib.check_turn_in(e.self, e.trade, {item1 = 28047},0)) then --Ornate Sea Shell
 		e.self:Say("So, you are a friend of Natasha's? That is good to see. She is a very wise and gifted woman. The Riptide goblins have adopted a new king but are still in a vulnerable state until his subjects accept his rule. The Plasmatic Priesthood is aware of the weakened state of the Riptides and has convinced the Fire Peak goblins to strike against them. Although I do not agree with the mannerisms or actions of any goblin clan, such a war would be detrimental to all who are caught in its path. Lord Gimblox of the Fire Peak clan has been meeting with a member of the Plasmatic Priesthood in the Temple of Solusek Ro. Locate the Plasmatic Priest, hand him this statue to hinder his powers, then eliminate him and bring me his robe.");
 		e.other:QuestReward(e.self,0,0,0,0,28051); --Coral Statue of Tarew
+	elseif(e.message:findi("I want to see Natasha Whitewater")) then
+		e.self:Say("Natasha is waiting inside, Please be quick about it!");
+		eq.unique_spawn(96080,0,0,-2198,-11601,76,192); --Natasha Whitewater
 	elseif(item_lib.check_turn_in(e.self, e.trade, {item1 = 1299},0)) then --Blood Soaked Plasmatic Priest Robe
 		e.self:Say("You have proven yourself to be one who is willing to take responsibility for his own actions. Such a trait is desired by all deities to be present in their faithful. I pray that you had the wisdom to slay Lord Gimblox as well as the Plasmatic Priest in order to prevent further advancement in the incursion against the Riptides. Priestess Natasha awaits inside the inn for Lord Gimblox's ring, make haste for she is a busy women and will depart soon.");
 		e.other:QuestReward(e.self,0,0,0,0,28049,100000); --Orb of Frozen Water
